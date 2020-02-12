@@ -26,7 +26,7 @@ SECRET_KEY = '2c*sgwcwswb^itc(&%lpxx^05k_b&-%7@afd71zj*--5i9d4f*'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'facebookproapp.herokuapp.com'
+    'facebookproapp.herokuapp.com','127.0.0.1'
 ]
 
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fbapp'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'facebook_pro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fb',
+        'USER':'root',
+        'PASSWORD':'',
+        'HOST' : 'localhost'
+        
     }
 }
 
@@ -120,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')

@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My FaceBook Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+	/*.colo{
+	background-color: #e6f2ff;
+	
+		}*/
+	#div1{
+		background-color:#3d5b99;
+		height: 70px;
+	}
+#div2{
+	padding-top: 20px;
+}
+#div3{
+	padding-top: 20px;
+}
+#span1{
+	padding-top: 10px;
+}
+#div4{
+	background-color:white;
+	height:200px;
+	margin-top:10px;
+	padding-top:10px;
+	padding-left:20px;
+}
+
+#div5{
+	background-color:white;
+	height:200px;
+	margin-top:10px;
+}
+
+#div6{
+	background-color:white;
+	height:350px;
+	margin-top:10px;
+}
+
+#div7{
+	background-color:white;
+	height:550px;
+	margin-top:10px;
+}
+</style>
+	
+</head>
+
+<body style="background-color:#f3f2f7">
+
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-12" id="div1">
+			<div class="col-md-6">
+<div class="input-group" id="div2">
+
+	<input type="text" class="form-control" placeholder="Search Facebook" size="20">
+	<span class="input-group-btn">
+		<button type="button" class="btn btn-default">Search</button>
+
+	</span>
+</div>
+</div>
+<div class="col-xs-4">
+<img src="{{user_obj.myimage.url}}"  alt="profilepic" height="50" width="40" id="div3">
+<span><font color="white">{{user_obj.firstname}}</font></span>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="col-md-2">
+<img src="{{user_obj.myimage.url}}"  alt="profilepic" height="50" width="40" id="div3">
+<span>{{user_obj.firstname}}</span>
+<br>
+<br>
+<span class="glyphicon glyphicon-pencil btn btn-primary btn-xs"></span> <a href="/fbapp/userprofile">View profile </a>
+<br>
+
+<!-- <span class="glyphicon glyphicon-pencil btn btn-primary btn-xs"></span> <a href="viewprofile">View profile </a>
+<br> -->
+<br>
+<span class="glyphicon glyphicon-pencil btn btn-primary btn-xs"></span> <a href="/fbapp/changepassword">Change Password </a>
+</div>
+
+     
+<div class="col-md-6">
+
+{% block content %}
+<div>
+<div id="div4">
+<div class="row">
+<span class="glyphicon glyphicon-pencil btn btn-primary btn-xs"></span> <a href="#">Update Status </a> | &nbsp;&nbsp;
+<span class="glyphicon glyphicon-picture btn btn-primary btn-xs"></span> <a href="#">Add Photos/Video</a> | &nbsp;&nbsp;
+<span class="glyphicon glyphicon-picture btn btn-primary btn-xs"></span> <a href="#">Write Notes</a>
+
+<hr>
+<div class="col-md-6">
+<img src="{% static 'images/profilepic.jpg' %}" alt="profilepic" height="50" width="47">&nbsp;&nbsp;&nbsp;&nbsp;<span><font color="grey">What's on your mind</font>
+</span>
+</div>
+
+</div>
+
+</div>
+<div class="col-md-12" id="div6">
+</div>	
+</div>
+{% endblock %}
+</div>
+
+<div class="col-md-4" id="div7">
+<br>
+<span> <FONT COLOR="GREY"><b>YOUR ADS</FONT></b></span>
+<hr>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
